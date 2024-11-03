@@ -1,13 +1,19 @@
-numbers = [2, -93, -2, 8, None, -44, -1, -85, -14, 90, -22, -90, -100, -8, 38, -92, -45, 67, 53, 25]
+# TODO Напишите функцию для поиска индекса товара
 
-# TODO заменить значение пропущенного элемента средним арифметическим
 
-missing_element_index = numbers.index(None)
+def find_of_index(items_list, item):
+    for index in range(len(items_list)):
+        if item == items_list[index]:
+            return index
+    return None
 
-numbers[missing_element_index] = 0
+items_list = ['яблоко', 'банан', 'апельсин', 'груша', 'киви', 'банан']
 
-avr_sum = sum(numbers) / len(numbers)
 
-numbers[missing_element_index] = avr_sum
 
-print("Измененный список:", numbers)
+for find_item in ['банан', 'груша', 'персик']:
+    index_item = find_of_index(items_list, find_item)          # TODO Вызовите функцию, что получить индекс товара
+    if index_item is not None:
+        print(f"Первое вхождение товара '{find_item}' имеет индекс {index_item}.")
+    else:
+        print(f"Товар '{find_item}' не найден в списке.")
